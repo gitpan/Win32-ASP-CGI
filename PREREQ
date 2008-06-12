@@ -1,0 +1,14 @@
+#!/usr/bin/perl -w
+use strict;
+use vars qw(%PREREQ %RECOMMEND);
+use lib 'lib';
+
+%PREREQ = (
+    'Win32::OLE'     => 0,
+    'CGI'            => 3.21,
+    'HTML::Entities' => 0,
+);
+
+1;
+
+__END__

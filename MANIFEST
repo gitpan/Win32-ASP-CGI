@@ -1,0 +1,10 @@
+lib/Win32/ASP/CGI.pm
+t/03-basic.t
+t/lib/MockASP.pm
+Changes
+MANIFEST
+Makefile.PL
+Build.PL
+README
+PREREQ
+META.yml
