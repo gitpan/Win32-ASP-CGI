@@ -2,5 +2,9 @@ Revision history for Perl extension Win32::ASP::CGI.
 
 Time zone is GMT+2.
 
+0.11 Tue Jul  8 21:37:55 2008
+   => Added Test::More as a prereq.
+   => Increase kwalitee.
+
 0.10 Thu Jun 12 23:18:37 2008
    => Initial release.

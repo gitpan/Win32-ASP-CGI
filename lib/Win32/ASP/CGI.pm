@@ -33,6 +33,9 @@ sub PRINTF    { shift->print(sprintf(shift, @_))  }
 package Win32::ASP::CGI;
 use strict;
 use warnings;
+
+our $VERSION = '0.11';
+
 use vars qw(
    $Application   $ObjectContext $Request
    $Response      $Server        $Session
@@ -62,8 +65,6 @@ BEGIN {
    $Server        = $::Server         = $::Server;
    $Session       = $::Session        = $::Session;
 }
-
-our $VERSION = '0.10';
 
 our @ISA     = qw(Exporter);
 our @EXPORT  = qw/

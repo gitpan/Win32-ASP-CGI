@@ -7,6 +7,7 @@ use lib 'lib';
     'Win32::OLE'     => 0,
     'CGI'            => 3.21,
     'HTML::Entities' => 0,
+    'Test::More'     => 0.40,
 );
 
 1;
