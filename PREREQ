@@ -1,15 +1,16 @@
 #!/usr/bin/perl -w
 use strict;
-use vars qw(%PREREQ %RECOMMEND);
+use vars qw(%PREREQ %RECOMMEND %BUILDREQ);
 use lib 'lib';
+
+%BUILDREQ = (
+    'Test::More'     => 0.40,
+);
 
 %PREREQ = (
     'Win32::OLE'     => 0,
     'CGI'            => 3.21,
     'HTML::Entities' => 0,
-    'Test::More'     => 0.40,
 );
 
 1;
-
-__END__

@@ -1,24 +1,30 @@
 ---
 name: Win32-ASP-CGI
-version: 0.11
+version: 0.13
 author:
   - 'Burak Gursoy <burak@cpan.org>'
 abstract: A module for Classic ASP (PerlScript) Programming
 license: perl
 resources:
   license: http://dev.perl.org/licenses/
+  repository: http://bitbucket.org/burak/cpan-win32-asp-cgi/
 requires:
   CGI: 3.21
   HTML::Entities: 0
-  Test::More: 0.4
   Win32::OLE: 0
+build_requires:
+  Test::More: 0.4
 provides:
   Win32::ASP::CGI:
     file: lib/Win32/ASP/CGI.pm
-    version: 0.11
+    version: 0.13
   Win32::ASP::CGI::IO:
     file: lib/Win32/ASP/CGI.pm
-generated_by: Module::Build version 0.2808
+no_index:
+  directory:
+    - tools
+    - t
+generated_by: Module::Build version 0.32
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
   version: 1.2

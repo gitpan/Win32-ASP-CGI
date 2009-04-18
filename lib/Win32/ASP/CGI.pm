@@ -1,4 +1,4 @@
-﻿# This module includes modified code portions from CGI.pm distribution
+# This module includes modified code portions from CGI.pm distribution
 #    CGI.pm Copyright 1995-1998 Lincoln D. Stein.  All rights reserved.
 #    http://stein.cshl.org/WWW/software/CGI/
 #
@@ -34,7 +34,7 @@ package Win32::ASP::CGI;
 use strict;
 use warnings;
 
-our $VERSION = '0.11';
+our $VERSION = '0.13';
 
 use vars qw(
    $Application   $ObjectContext $Request
@@ -225,7 +225,8 @@ sub param (;$$) {
    }
    # return a list
    my @ret;
-   for my $i ( 1 .. $handle->($name)->Count ) {
+   my $hn = $handle->($name) || return;
+   for my $i ( 1 .. $hn->Count ) {
       push @ret, $handle->($name)->Item($i);
    }
    @ret = $self->_decoder( @ret ) if $utf8;
@@ -245,7 +246,8 @@ sub cookie {
 sub env {
    my($self,$id) = self_or_default(@_);
    if ( $id ) {
-      return $Request->ServerVariables( $id )->{Item};
+      my $var = $Request->ServerVariables( $id );
+      return $var ? $var->{Item} : undef;
    }
    #return if not wantarray;
    my %env2;
@@ -679,7 +681,8 @@ sub _cookie_get (;$) {
       return @names or +();
    }
    my $name = shift @args;
-   my $raw  = $::Request->Cookies($name)->Item;
+   my $source = $::Request->Cookies($name) || return +();
+   my $raw  = $source->Item;
    my %hash;
    my @values;
    foreach my $e (split /[&]/, $raw) {

@@ -3,10 +3,12 @@ t/01-pod.t
 t/02-pod-coverage.t
 t/03-basic.t
 t/lib/MockASP.pm
+tools/Build.pm
 Changes
 MANIFEST
 Makefile.PL
 Build.PL
 README
 PREREQ
+LICENSE
 META.yml
